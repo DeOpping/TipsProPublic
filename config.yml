@@ -1,0 +1,129 @@
+# I recommend keeping this enabled!
+# This will let you know in console upon server start IF there is an update for TipsPro!
+update-checker: true
+
+
+
+# To use HEX colors, you must be in 1.16+
+# Example: '#123456Hello!' in any message or tip!
+action-bar:
+  toggle: true
+  # Delay: How long until another tip shows AFTER the previous tip goes away
+  delay: 100
+  # Wait: How long a tip stays
+  wait: 100
+  # Sub commands: Do not add a space!
+  # /tips <sub-command>
+  sub-commands:
+    - 'actionbar'
+    - 'action'
+    - 'bar'
+    - 'ab'
+  tips:
+    - '%PREFIX% &aSounds supported!'
+    - '%PREFIX% &aHEX colors supported on 1.16+'
+    - '%PREFIX% &aChange these in the &fconfig.yml&a!'
+    - '%PREFIX% &aThank you for using &fTipsPro&a!'
+
+
+
+chat:
+  toggle: true
+  # Sub commands: Do not add a space!
+  # /tips <sub-command>
+  sub-commands:
+    - 'chat'
+  # Delay: How long until another chat tip appears
+  delay: 1000
+  tips:
+    'sounds':
+      # Sounds: select a sound from the list near the bottom of the file
+      # Sounds are optional for each tip
+      # IDs are case-sensitive!
+      sound: "chat"
+      tip:
+        - '%PREFIX% &aSounds supported!'
+    'hex':
+      tip:
+        - '%PREFIX% &aHEX colors supported on 1.16+'
+    'config':
+      tip:
+        - '%PREFIX% &aChange these in the &fconfig.yml&a!'
+    'thanks':
+      tip:
+        - '%PREFIX% &aThank you for using &fTipsPro&a!'
+    'multiple':
+      tip:
+        - '&8&m      &8[ &c&lTipsPro &8]&m      '
+        - '    &aMultiple lines!'
+        - '  &cOnly works for chat!'
+
+
+
+messages:
+  prefix: '&c&lTipsPro &8&l|'
+  no-permission:
+    - '%PREFIX% &cNo permission!'
+  # /tipspro help
+  help:
+    - '&8&m    &8[ &c&lTipsPro &8]&m    '
+    - ' &f&l* &f/tips help &8- &7&oDisplays this info!'
+    - ' &f&l* &f/tips reload &8- &7&oReloads the config!'
+    - ' &f&l* &f/tips &8- &7&oToggles action-bar tips!'
+  # /tipspro reload
+  reload:
+    - '%PREFIX% &f&aConfig reloaded!'
+  # /tips
+  toggle:
+    - '%PREFIX% &aAll Tips toggled!'
+  action-bar-enabled:
+    - '%PREFIX% &aAction-Bar Tips enabled!'
+  action-bar-disabled:
+    - '%PREFIX% &cAction-Bar Tips disabled!'
+  chat-enabled:
+    - '%PREFIX% &aChat Tips enabled!'
+  chat-disabled:
+    - '%PREFIX% &cChat Tips disabled!'
+
+
+
+permissions:
+  help: 'tipspro.help' # /tipspro help
+  reload: 'tipspro.reload' # /tipspro reload
+  tips: 'tipspro.tips' # /tips
+  tips-action-bar: 'tipspro.tips.actionbar' # /tips actionbar
+  tips-chat: 'tipspro.tips.chat' # /tips chat
+
+
+
+placeholders: # Requires PlaceholderAPI
+  tipspro_tips: # %tipspro_tips%
+    enabled: '&aEnabled'
+    disabled: '&cDisabled'
+
+
+
+# Use the sounds for the correct version!
+# 1.9 List: https://www.spigotmc.org/wiki/cc-sounds-list/
+# 1.16 List: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+sounds:
+  'action-bar': # Tip ID
+    toggle: false # Easily disable the sound for anything using it
+    sound: 'ENTITY_EXPERIENCE_ORB_PICKUP'
+    volume: 1
+    pitch: 1
+  'chat':
+    toggle: false
+    sound: 'ENTITY_EXPERIENCE_ORB_PICKUP'
+    volume: 1
+    pitch: 1
+  'enabled':
+    toggle: false
+    sound: 'BLOCK_NOTE_BLOCK_BASS'
+    volume: 1
+    pitch: 2
+  'disabled':
+    toggle: false
+    sound: 'BLOCK_NOTE_BLOCK_BASS'
+    volume: 1
+    pitch: 0
